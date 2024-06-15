@@ -40,7 +40,7 @@ public class UserResource {
 	@GetMapping
 	public ResponseEntity<UserDTO> findById(@PathVariable String id) {
 		User obj = service.findById(id);
-		return ResponseEntity.ok().body(new UserDTO(obj));
+		return ResponseEntity.ok().body(new UserDTO(obj)); 
 	}
 	
 	@PostMapping
@@ -65,6 +65,8 @@ public class UserResource {
 		obj = service.update(obj);
 		return ResponseEntity.noContent().build();		
 	}
+	
+	//POSTS
 	
 	@RequestMapping(value = "/{id}/posts")
 	@GetMapping
